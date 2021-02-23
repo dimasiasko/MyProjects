@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Dmytro\source\repos\ATM\ATM\obj\Debug\
+D:\projects\MyProjects\ATM\ATM\obj\Debug\
 ATM
 none
 false
 DEBUG;TRACE
-C:\Users\Dmytro\source\repos\ATM\ATM\App.xaml
+D:\projects\MyProjects\ATM\ATM\App.xaml
 3-1191242276
 
 8811737744
-151899468928
+151463366822
 CardIsInto.xaml;MainWindow.xaml;PIN.xaml;
 
 True

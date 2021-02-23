@@ -42,8 +42,10 @@ namespace ATM
         {
             if (e.Key == Key.Space)
             {
-                CardIsInto cardIsInto = new CardIsInto();
-                cardIsInto.Show();
+                PIN pinWindow = new PIN();
+                pinWindow.Show();
+
+                this.Close();
 
             }
         }
