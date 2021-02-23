@@ -11,22 +11,40 @@ namespace WatchStore
 {
     class ApplicationViewModel : INotifyPropertyChanged
     {
-        private Watch selectedPhone;
+        private Watch selectedWatch;
 
-        public ObservableCollection<Watch> Phones { get; set; }
-        public Watch SelectedPhone
+        public ObservableCollection<Watch> Watches { get; set; }
+
+        private RelayCommand addCommand;
+        public RelayCommand AddCommand
         {
-            get { return selectedPhone; }
+            get
+            {
+                return addCommand ??
+                       (addCommand = new RelayCommand(obj =>
+                       {
+                           Watch watch = new Watch();
+                           Watches.Insert(0, watch);
+                           SelectedWatch = watch;
+                       }));
+            }
+        }
+
+
+
+        public Watch SelectedWatch
+        {
+            get { return selectedWatch; }
             set
             {
-                selectedPhone = value;
-                OnPropertyChanged("SelectedPhone");
+                selectedWatch = value;
+                OnPropertyChanged("SelectedWatch");
             }
         }
 
         public ApplicationViewModel()
         {
-            Phones = new ObservableCollection<Watch>
+            Watches = new ObservableCollection<Watch>
             {
                 new Watch { Title="A168WEM-7VT", Company = "Casio", Price = 955, Icon = @"D:\projects\MyProjects\WatchStore\WatchStore\Images\gsk-a168wem7vt-na-na-5.jpg"},
                 new Watch {Title="Watch Series 3", Company="Apple", Price = 4500, Icon = @"D:\projects\MyProjects\WatchStore\WatchStore\Images\1817618635.jpg"},

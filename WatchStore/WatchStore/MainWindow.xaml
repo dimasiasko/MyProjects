@@ -27,9 +27,13 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="0.8*" />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.2*" />
+        </Grid.RowDefinitions>
 
-        <ListBox Grid.Column="0" ItemsSource="{Binding Phones}"
-                 SelectedItem="{Binding SelectedPhone}" Style="{StaticResource MaterialDesignCardsListBox}">
+        <ListBox Grid.Column="0" ItemsSource="{Binding Watches}"
+                 SelectedItem="{Binding SelectedWatch}" Style="{StaticResource MaterialDesignCardsListBox}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -45,7 +49,11 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <StackPanel Grid.Column="1" DataContext="{Binding SelectedPhone}">
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Command="{Binding AddCommand}" Style="{StaticResource MaterialDesignRaisedLightButton}">+</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" DataContext="{Binding SelectedWatch}">
             <TextBlock Text="Выбранный элемент"  />
             <TextBlock Text="Модель" />
             <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" />
