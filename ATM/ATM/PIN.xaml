@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Height="450" Width="750" WindowStartupLocation="CenterScreen" WindowStyle="None" 
-        ResizeMode="NoResize" AllowsTransparency="True" Background="{x:Null}">
+        ResizeMode="NoResize" AllowsTransparency="True" Background="{x:Null}" >
     <Grid Background="{x:Null}">
         <materialDesign:Card Margin="10" UniformCornerRadius="20" Background="{x:Null}">
             <StackPanel>
@@ -39,10 +39,10 @@
                     <PasswordBox Grid.Row="3" Margin="30" Width="75" Height="60" Foreground="#39352D" 
                                  Style="{StaticResource MaterialDesignPasswordBox}" HorizontalAlignment="Center"
                                  VerticalAlignment="Center" FontSize="28" Name="passwordInput" 
-                                 MaxLength="4" TextInput="PasswordInput_OnTextInput"></PasswordBox>
+                                 MaxLength="4" ></PasswordBox>
                     <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Width="200" Height="40" 
-                                Background="#A2CECF" Foreground="#39352D" KeyDown="btnConfirm">Подтвердить</Button>
+                                Background="#A2CECF" Foreground="#39352D" Name="btnToConfirm" Click="BtnToConfirm_OnClick">Подтвердить</Button>
                     </StackPanel>
                     
                 </Grid>

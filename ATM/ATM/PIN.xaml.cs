@@ -25,24 +25,17 @@ namespace ATM
         }
 
 
-        private void btnConfirm(object sender, KeyEventArgs e)
+        private void BtnToConfirm_OnClick(object sender, RoutedEventArgs e)
         {
             int password;
 
-            if (int.TryParse(passwordInput.Password, out password) && e.Key == Key.Space)
+            if (int.TryParse(passwordInput.Password, out password))
             {
                 CardIsInto cardIsInto = new CardIsInto();
                 cardIsInto.Show();
+                this.Close();
+                
             }
-           
-        }
-
-        private void PasswordInput_OnTextInput(object sender, TextCompositionEventArgs e)
-        {
-            char[] arrayPass = new char[4];
-            string s = passwordInput.ToString();
-            s.ToCharArray();
-
         }
     }
 }
