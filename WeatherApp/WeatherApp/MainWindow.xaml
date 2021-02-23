@@ -1,0 +1,65 @@
+﻿<Window x:Class="WeatherApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Height="600" Width="420" WindowStartupLocation="CenterScreen" WindowStyle="None" 
+        ResizeMode="NoResize" AllowsTransparency="True" Background="{x:Null}" Loaded="MainWindow_OnLoaded">
+    <Grid Background="{x:Null}">
+        <materialDesign:Card Margin="10" UniformCornerRadius="20" Background="{x:Null}" MouseDown="UIElement_OnMouseDown">
+            <StackPanel>
+                <StackPanel.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#0C3B2E" Offset="0.55" />
+                        <GradientStop Color="#6D9773" Offset="1" />
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <Grid Height="70">
+                    <Button Margin="20,0" HorizontalAlignment="Left" Style="{StaticResource myButton}">
+                        <StackPanel>
+                            <materialDesign:PackIcon Width="20" Height="20" Kind="Refresh"></materialDesign:PackIcon>
+                        </StackPanel>
+                    </Button>
+                    <Canvas HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Canvas.Left="-100" Text="{Binding Source={x:Static sys:DateTime.Now}}" Background="#FFBA00" Margin="5" x:Name="txtDateNow"
+                                   Foreground="#B46617"  Padding="5"  FontSize="19" Style="{StaticResource MaterialDesignButtonTextBlock}">
+                            <TextBlock.Triggers>
+                                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" From="-100" To="-75" 
+                                                                 Duration="0:0:2" RepeatBehavior="Forever" AutoReverse="True"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+                            </TextBlock.Triggers>
+                        </TextBlock>
+                    </Canvas>
+                    <Button Margin="20,0" HorizontalAlignment="Right" Click="ButtonBase_OnClick" Style="{StaticResource myButton}">
+                        <StackPanel>
+                            <materialDesign:PackIcon Width="20" Height="20" Kind="CloseBox"></materialDesign:PackIcon>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image Margin="0 40 0 0" Source="Icons/sun with clouds.png" Width="250" Height="250"/>
+                    <TextBlock Name="txtCurrentTemperature" Margin="5" Grid.Row="1" HorizontalAlignment="Center" FontSize="55" Foreground="#FFBA00" 
+                               FontWeight="SemiBold" FontFamily="./#Kameron"></TextBlock>
+                </Grid>
+                    
+                
+                </StackPanel>
+        </materialDesign:Card>
+    </Grid>
+</Window>
