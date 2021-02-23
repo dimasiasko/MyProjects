@@ -67,11 +67,25 @@ namespace MusicPlayer
                 "Are you really want to delete ALL tracks?", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
 
             if (result == MessageBoxResult.Yes)
+            {
+                DefaultValues();
                 MessageBox.Show("Tracks deleted");
-            else if (result == MessageBoxResult.No)
+            }
+            else
                 return;
         }
 
+        private void DefaultValues()
+        {
+            mediaPlayer.Close();
+            SelectedNamesSongs.Clear();
+            SelectedSongs.Clear();
+            lblSongname.Text = "Выберите треки";
+            lstSongs.SelectedIndex = -1;
+            lblCurrenttime.Text = "0:00";
+            lblMusicLength.Text = "0;00";
+            TimerSlider.Value = 0;
+        }
         private void BtnHide_OnClick(object sender, RoutedEventArgs e)
         {
 
@@ -136,13 +150,21 @@ namespace MusicPlayer
 
         private void LstSongs_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            mediaPlayer.Open(new Uri((string)lstSongs.SelectedItem,UriKind.RelativeOrAbsolute));
-            mediaPlayer.Play();
+            if (lstSongs.SelectedIndex != -1)
+            {
+                mediaPlayer.Open(new Uri((string)lstSongs.SelectedItem, UriKind.RelativeOrAbsolute));
+                mediaPlayer.Play();
 
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += timer_Tick;
-            timer.Start();
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromSeconds(1);
+                timer.Tick += timer_Tick;
+                timer.Start();
+
+                lblSongname.Text = SelectedNamesSongs[lstSongs.SelectedIndex];
+            }
+            else
+                return;
+
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -172,12 +194,30 @@ namespace MusicPlayer
 
         private void BtnPNext_OnClick(object sender, RoutedEventArgs e)
         {
-            lstSongs.SelectedIndex += 1;
+            if (btnRandom.IsChecked == false)
+            {
+                if ((lstSongs.SelectedIndex + 1) >= SelectedSongs.Count)
+                    lstSongs.SelectedIndex = 0;
+                else
+                    lstSongs.SelectedIndex += 1;
+            }
+            else
+            {
+                Random random = new Random();
+                int newIndex = random.Next(SelectedSongs.Count);
+
+                lstSongs.SelectedIndex = newIndex;
+            }
+
+            
         }
 
         private void BtnPRewind_OnClick(object sender, RoutedEventArgs e)
         {
-            lstSongs.SelectedIndex -= 1;
+            if ((lstSongs.SelectedIndex - 1) == -1)
+                lstSongs.SelectedIndex = SelectedSongs.Count - 1;
+            else
+                lstSongs.SelectedIndex -= 1;
         }
 
         private void sliProgress_DragStarted(object sender, DragStartedEventArgs e)

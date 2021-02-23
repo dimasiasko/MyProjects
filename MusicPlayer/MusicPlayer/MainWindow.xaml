@@ -38,13 +38,9 @@
                     </Button>
                 </Grid>
                 <ListBox Height="200" SelectionChanged="LstSongs_OnSelectionChanged" Margin="20,0,20,10" Foreground="#FFE7D0" Background="#323232" Name="lstSongs">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock FontSize="12" />
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
+                   
                 </ListBox>
-                <TextBlock Margin="10" FontSize="19" Text="Song Name" Foreground="#FFE7D0" TextAlignment="Center"
+                <TextBlock Margin="10" FontSize="19" Text="Выберите треки" Foreground="#FFE7D0" TextAlignment="Center"
                            FontWeight="SemiBold" x:Name="lblSongname"/>
                 <Grid Margin="0,15,0,0">
                     <TextBlock FontSize="11" Text="0:00" Margin="20 0" Foreground="White" FontWeight="ExtraLight" TextAlignment="Center"
