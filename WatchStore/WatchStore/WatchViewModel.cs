@@ -5,52 +5,43 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using WatchStore.Annotations;
 
 namespace WatchStore
 {
-    public class Watch : INotifyPropertyChanged
+    public class WatchViewModel : INotifyPropertyChanged
     {
-        private string title;
-        private string company;
-        private int price;
-        private string icon;
+        private Watch watch;
+
+        public WatchViewModel(Watch p)
+        {
+            watch = p;
+        }
 
         public string Title
         {
-            get { return title; }
+            get { return watch.Title; }
             set
             {
-                title = value;
+                watch.Title = value;
                 OnPropertyChanged("Title");
             }
         }
         public string Company
         {
-            get { return company; }
+            get { return watch.Company; }
             set
             {
-                company = value;
+                watch.Company = value;
                 OnPropertyChanged("Company");
             }
         }
         public int Price
         {
-            get { return price; }
+            get { return watch.Price; }
             set
             {
-                price = value;
+                watch.Price = value;
                 OnPropertyChanged("Price");
-            }
-        }
-
-        public string Icon
-        {
-            get { return icon; }
-            set
-            {
-                icon = value;
-                OnPropertyChanged("Icon");
             }
         }
 

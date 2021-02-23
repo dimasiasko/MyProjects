@@ -38,7 +38,7 @@
                             <TextBlock Text="{Binding Path=Company}" />
                             <TextBlock Text="{Binding Path=Price}" />
                         </StackPanel>
-                        <Image></Image>
+                        <Image Source="{Binding Path=Icon}" Width="65" Height="65"></Image>
                     </StackPanel>
                     
                 </DataTemplate>

@@ -28,10 +28,10 @@ namespace WatchStore
         {
             Phones = new ObservableCollection<Watch>
             {
-                new Watch { Title="A168WEM-7VT", Company = "Casio", Price = 955 },
-                new Watch {Title="Watch Series 3", Company="Apple", Price = 4500 },
-                new Watch {Title="Pro Diver", Company="Rolex", Price=280000 },
-                new Watch {Title="Seamaster", Company="Omega", Price=48000 }
+                new Watch { Title="A168WEM-7VT", Company = "Casio", Price = 955, Icon = @"D:\projects\MyProjects\WatchStore\WatchStore\Images\gsk-a168wem7vt-na-na-5.jpg"},
+                new Watch {Title="Watch Series 3", Company="Apple", Price = 4500, Icon = @"D:\projects\MyProjects\WatchStore\WatchStore\Images\1817618635.jpg"},
+                new Watch {Title="Pro Diver", Company="Invicta", Price=2000, Icon = @"D:\projects\MyProjects\WatchStore\WatchStore\Images\3fd1eaf6d5b1325b132d2c97d9b417f0.jpg"},
+                new Watch {Title="Seamaster", Company="Omega", Price=48000, Icon = @"D:\projects\MyProjects\WatchStore\WatchStore\Images\Omega21-Soldier_28a5e176-5585-4b81-aacb-5ae20cbc9967_1600x1600.jpg"}
             };
         }
 
