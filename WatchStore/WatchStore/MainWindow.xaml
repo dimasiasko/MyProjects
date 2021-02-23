@@ -50,7 +50,9 @@
         </ListBox>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button Command="{Binding AddCommand}" Style="{StaticResource MaterialDesignRaisedLightButton}">+</Button>
+            <Button Command="{Binding AddCommand}">+</Button>
+            <Button Command="{Binding RemoveCommand}"
+                    CommandParameter="{Binding SelectedWatch}">-</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1" DataContext="{Binding SelectedWatch}">

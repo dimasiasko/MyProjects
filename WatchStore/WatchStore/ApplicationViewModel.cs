@@ -30,6 +30,23 @@ namespace WatchStore
             }
         }
 
+        private RelayCommand removeCommand;
+        public RelayCommand RemoveCommand
+        {
+            get
+            {
+                return removeCommand ??
+                       (removeCommand = new RelayCommand(obj =>
+                           {
+                               Watch watch = obj as Watch;
+                               if (watch != null)
+                               {
+                                   Watches.Remove(watch);
+                               }
+                           },
+                           (obj) => Watches.Count > 0));
+            }
+        }
 
 
         public Watch SelectedWatch
