@@ -63,6 +63,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TakeCashWindow.xaml.cs">
+      <DependentUpon>TakeCashWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="CardIsInto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +86,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PIN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TakeCashWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
