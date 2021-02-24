@@ -88,7 +88,7 @@ namespace MusicPlayer
         }
         private void BtnHide_OnClick(object sender, RoutedEventArgs e)
         {
-
+            this.Hide();
         }
 
         private ObservableCollection<string> _selectedSongs = new ObservableCollection<string>();
@@ -142,8 +142,8 @@ namespace MusicPlayer
             }
             else
                 MessageBox.Show("Выберите файлы для проигрывания!");
+
             lstSongs.ItemsSource = SelectedSongs;
-            
         }
 
         private MediaPlayer mediaPlayer = new MediaPlayer();

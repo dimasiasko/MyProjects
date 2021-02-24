@@ -6,7 +6,7 @@
         xmlns:materialDesigh="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:MusicPlayer"
         mc:Ignorable="d"
-        Height="600" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="None" 
+        Height="600" Width="390" WindowStartupLocation="CenterScreen" WindowStyle="None" 
         ResizeMode="NoResize" AllowsTransparency="True" Background="{x:Null}">
     <Grid Background="{x:Null}">
         <materialDesigh:Card Margin="10" UniformCornerRadius="20" Background="{x:Null}" MouseDown="Card_MouseDown">
@@ -38,7 +38,7 @@
                     </Button>
                 </Grid>
                 <ListBox Height="200" SelectionChanged="LstSongs_OnSelectionChanged" Margin="20,0,20,10" Foreground="#FFE7D0" Background="#323232" Name="lstSongs">
-                   
+
                 </ListBox>
                 <TextBlock Margin="10" FontSize="19" Text="Выберите треки" Foreground="#FFE7D0" TextAlignment="Center"
                            FontWeight="SemiBold" x:Name="lblSongname"/>
@@ -51,10 +51,11 @@
                 <Slider Thumb.DragStarted="sliProgress_DragStarted"  Thumb.DragCompleted="sliProgress_DragCompleted" ValueChanged="sliProgress_ValueChanged"  Margin="20 0" Foreground="#FFE7D0" x:Name="TimerSlider" />
 
                 <WrapPanel HorizontalAlignment="Center" Margin="0 ,30,0,20" >
+                    
                     <Button Style="{StaticResource CActionButtons}" HorizontalAlignment="Right" Margin="10 0"
-                            ToolTip="Play Next" x:Name="btnPNext" Click="BtnPNext_OnClick">
+                            ToolTip="Play Previous" x:Name="btnPRewind" Click="BtnPRewind_OnClick">
                         <StackPanel Margin="-5">
-                            <materialDesigh:PackIcon Kind="FastForward" Width="20" Height="20"/>
+                            <materialDesigh:PackIcon Kind="FastRewind" Width="20" Height="20"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource CActionButtons}" HorizontalAlignment="Right" Margin="10 0"
@@ -76,9 +77,9 @@
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource CActionButtons}" HorizontalAlignment="Right" Margin="10 0"
-                            ToolTip="Play Previous" x:Name="btnPRewind" Click="BtnPRewind_OnClick">
+                            ToolTip="Play Next" x:Name="btnPNext" Click="BtnPNext_OnClick">
                         <StackPanel Margin="-5">
-                            <materialDesigh:PackIcon Kind="FastRewind" Width="20" Height="20"/>
+                            <materialDesigh:PackIcon Kind="FastForward" Width="20" Height="20"/>
                         </StackPanel>
                     </Button>
                 </WrapPanel>

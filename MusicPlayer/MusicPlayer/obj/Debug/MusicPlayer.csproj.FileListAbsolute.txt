@@ -60,3 +60,7 @@ D:\projects\MyProjects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.Core
 D:\projects\MyProjects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.csproj.CopyComplete
 D:\projects\MyProjects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.exe
 D:\projects\MyProjects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.pdb
+D:\projects\MyProjects\MusicPlayer\MusicPlayer\bin\Debug\MusicPlayer.exe.manifest
+D:\projects\MyProjects\MusicPlayer\MusicPlayer\bin\Debug\MusicPlayer.application
+D:\projects\MyProjects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.exe.manifest
+D:\projects\MyProjects\MusicPlayer\MusicPlayer\obj\Debug\MusicPlayer.application
