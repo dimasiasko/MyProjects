@@ -29,6 +29,7 @@ namespace MusicPlayer
     public partial class MainWindow : Window
     {
         private bool userIsDraggingSlider = false;
+        private bool userisDraggingVolumeSlider = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -235,5 +236,25 @@ namespace MusicPlayer
         {
             lblCurrenttime.Text = TimeSpan.FromSeconds(TimerSlider.Value).ToString(@"mm\:ss");
         }
+
+        public double Volume
+        {
+            get { return mediaPlayer.Volume; }
+            set
+            {
+                mediaPlayer.Volume = value;
+            }
+        }
+
+        //private void Thumb_OnDragStarted(object sender, DragStartedEventArgs e)
+        //{
+        //    userisDraggingVolumeSlider = true;
+        //}
+
+        //private void VolumeSlider_OnDragCompleted(object sender, DragCompletedEventArgs e)
+        //{
+        //    userisDraggingVolumeSlider = false;
+        //    mediaPlayer.Volume = VolumeSlider.Value;
+        //}
     }
 }

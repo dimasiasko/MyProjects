@@ -49,7 +49,17 @@
                                HorizontalAlignment="Right" x:Name="lblMusicLength"/>
                 </Grid>
                 <Slider Thumb.DragStarted="sliProgress_DragStarted"  Thumb.DragCompleted="sliProgress_DragCompleted" ValueChanged="sliProgress_ValueChanged"  Margin="20 0" Foreground="#FFE7D0" x:Name="TimerSlider" />
-
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <StackPanel Margin="10 5 0 0">
+                        <materialDesigh:PackIcon Kind="VolumeHigh" Foreground="#FFE7D0" Width="30" Height="30"/>
+                    </StackPanel>
+                    <Slider Width="100" Margin="10, 10 10 0" Name="VolumeSlider" Minimum="0" Maximum="100"
+                           
+                           Foreground="#FFE7D0" Value="{Binding mediaPlayer.Volume}">
+                            
+                    </Slider>
+                </StackPanel>
+                
                 <WrapPanel HorizontalAlignment="Center" Margin="0 ,30,0,20" >
                     
                     <Button Style="{StaticResource CActionButtons}" HorizontalAlignment="Right" Margin="10 0"
